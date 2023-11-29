@@ -2,8 +2,8 @@ import Hamzter
 import UIKit
 import XCTest
 
-final class TableViewTests: XCTestCase {
-  func test_registerComponent_methodCalledCorrectly() {
+final class TableViewCellRegisteringTests: XCTestCase {
+  func test_registerComponent_methodIsCorrectlyExecuted() {
     let sut = UITableViewSpy()
 
     sut.registerComponent(ofType: ReusableStub.self)

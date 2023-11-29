@@ -2,8 +2,8 @@ import Hamzter
 import UIKit
 import XCTest
 
-final class CollectionViewTests: XCTestCase {
-  func test_registerComponent_methodCalledCorrectly() {
+final class CollectionViewCellRegistering: XCTestCase {
+  func test_registerComponent_methodIsCorrectlyExecuted() {
     let sut = UICollectionViewSpy(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
 
     sut.registerComponent(ofType: ReusableStub.self)

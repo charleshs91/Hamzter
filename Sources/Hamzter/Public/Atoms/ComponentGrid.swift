@@ -2,7 +2,7 @@ import UIKit
 
 public typealias ReusableCollectionViewCell = UICollectionViewCell & ReusableComponent
 
-public struct CollectionComponentProvider<Model, Cell>: CollectionComponentProviding
+public struct ComponentGrid<Model, Cell>: CollectionComponentProviding
 where Cell: ReusableCollectionViewCell,
       Cell.Model == Model {
   public typealias Modifier = (Cell) -> Void

@@ -2,7 +2,7 @@ import UIKit
 
 public typealias ReusableTableViewCell = UITableViewCell & ReusableComponent
 
-public struct TableComponentProvider<Model, Cell>: TableComponentProviding
+public struct ComponentRow<Model, Cell>: TableComponentProviding
 where Cell: ReusableTableViewCell,
       Cell.Model == Model {
   public typealias Modifier = (Cell) -> Void

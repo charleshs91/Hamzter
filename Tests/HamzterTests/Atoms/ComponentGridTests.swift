@@ -2,25 +2,25 @@ import Hamzter
 import UIKit
 import XCTest
 
-final class TableComponentProviderTests: XCTestCase {
-  func test_cellAtIndexPathInTableView_dequeuedCellIsCorrectlyConfigured() {
+final class ComponentGridTests: XCTestCase {
+  func test_cellAtIndexPathInCollectionView_dequeuedCellIsCorrectlyConfigured() {
     let injectingMessage = #function
     let model = TestingModel(text: "TestingText")
-    let tableView = UITableView()
-    tableView.registerComponent(ofType: TestingCell.self)
-    let sut = TableComponentProvider<TestingModel, TestingCell>(model) { cell in
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    collectionView.registerComponent(ofType: TestingCell.self)
+    let sut = ComponentGrid<TestingModel, TestingCell>(model) { cell in
       cell.message = injectingMessage
     }
 
-    let cell = sut.cell(at: IndexPath(item: 0, section: 0), in: tableView) as? TestingCell
+    let cell = sut.cell(at: IndexPath(item: 0, section: 0), in: collectionView) as? TestingCell
 
     XCTAssertEqual(cell?.message, injectingMessage)
-    XCTAssertEqual(cell?.textLabel?.text, model.text)
+    XCTAssertEqual(cell?.textLabel.text, model.text)
   }
 
   func test_modelAs_castingIntoMatchingType_returnsModelCorrectly() throws {
     let model = TestingModel(text: "TestingText")
-    let sut = TableComponentProvider<TestingModel, TestingCell>(model)
+    let sut = ComponentGrid<TestingModel, TestingCell>(model)
 
     let outputModel = try XCTUnwrap(sut.getModel(as: TestingModel.self))
 
@@ -29,7 +29,7 @@ final class TableComponentProviderTests: XCTestCase {
 
   func test_modelAs_castingIntoWrongType_returnsNil() throws {
     let model = TestingModel(text: "TestingText")
-    let sut = TableComponentProvider<TestingModel, TestingCell>(model)
+    let sut = ComponentGrid<TestingModel, TestingCell>(model)
 
     XCTAssertNil(sut.getModel(as: AnotherModel.self))
   }
@@ -40,10 +40,11 @@ final class TableComponentProviderTests: XCTestCase {
 
   private struct AnotherModel { }
 
-  private class TestingCell: UITableViewCell, ReusableComponent {
+  private class TestingCell: UICollectionViewCell, ReusableComponent {
+    let textLabel = UILabel()
     var message: String?
     func update(with viewModel: TestingModel) {
-      textLabel?.text = viewModel.text
+      textLabel.text = viewModel.text
     }
   }
 }

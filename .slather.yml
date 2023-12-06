@@ -1,0 +1,7 @@
+scheme: Hamzter
+workspace: Hamzter.xcworkspace
+xcodeproj: Sources/Hamzter.xcodeproj
+output_directory: coverage/slather
+
+ignore:
+  - Tests/*

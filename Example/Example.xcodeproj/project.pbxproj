@@ -15,6 +15,19 @@
 		B9036AEB2B183ACE000B019F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9036AE92B183ACE000B019F /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B9E2D6172B20C3C600CA9A7A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		B9036ADB2B183ACE000B019F /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9036ADE2B183ACE000B019F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -24,7 +37,6 @@
 		B9036AE72B183ACE000B019F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9036AEA2B183ACE000B019F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9036AEC2B183ACE000B019F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B9036AF62B183B40000B019F /* Hamzter */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Hamzter; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +53,6 @@
 		B9036AD22B183ACE000B019F = {
 			isa = PBXGroup;
 			children = (
-				B9036AF52B183B40000B019F /* Packages */,
 				B9036ADD2B183ACE000B019F /* Example */,
 				B9036ADC2B183ACE000B019F /* Products */,
 			);
@@ -69,14 +80,6 @@
 			path = Example;
 			sourceTree = "<group>";
 		};
-		B9036AF52B183B40000B019F /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				B9036AF62B183B40000B019F /* Hamzter */,
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -87,6 +90,7 @@
 				B9036AD72B183ACE000B019F /* Sources */,
 				B9036AD82B183ACE000B019F /* Frameworks */,
 				B9036AD92B183ACE000B019F /* Resources */,
+				B9E2D6172B20C3C600CA9A7A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
